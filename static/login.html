@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Handy-Login</title>
+	<link rel="stylesheet" type="text/css" href="./css/common.css">
+	<style>
+		body{
+			background: url(./img/login-bg.jpg);
+			background-size: cover;
+		}
+		.login-area{
+			width:300px;
+			height:300px;
+			background-color: #fff;
+			position: absolute;
+			right:300px;
+			top:100px;
+			padding:15px 20px;
+		}
+		.login-area .title{
+			font-size:24px;
+			line-height:40px;
+			padding:10px 0;
+			text-align: center;
+		}
+		.login-area .ipt{
+			width:100%;
+			height:35px;
+			border:1px solid #ccc;
+			text-indent:10px;
+		}
+		.login-area .item{
+			margin:20px 0;
+		}
+		.login-area .login-btn{
+			display: block;
+			width:100%;
+			height:35px;
+			text-align: center;
+			line-height: 35px;
+			background-color:#00c1de;
+			color:#fff;
+			cursor: pointer;
+		}
+
+		/*登录动效*/
+		.login-animate{
+			position: absolute;
+			left:0;
+			right:0;
+			top:0;
+			bottom: 0;
+			background: rgba(0,0,0,.7);
+			display: none;
+		}
+		#login-json{
+			width:100px;
+			position: absolute;
+			left:50%;
+			margin-left:-50px;
+			top:20%;
+		}
+	</style>
+</head>
+<body>
+	愿每一个暗淡的瞬间，都有一束善意的阳光相伴，愿每一个慈悲善良的人都能被世界温柔相待
+	<div class="login-area">
+		<div class="title">Handy系统登录</div>
+		<div class="form">
+			<div class="item"><input type="text" class="ipt uname-ipt" placeholder="请输入账号"></div>
+			<div class="item"><input type="password" class="ipt pwd-ipt" placeholder="请输入密码"></div>
+			<div class="item"><span class="login-btn">登录</span></div>
+		</div>
+	</div>
+	<div class="login-animate">
+		<div id="login-json"></div>
+	</div>
+	<script src="./js/jquery.min.js"></script>
+	<script src="./js/jquery.cookie.js"></script>
+	<script>
+	var apiAddress='/handy/public/index.php';
+	$('.login-btn').click(function(){
+		var uname=$('.uname-ipt').val();
+		var pwd=$('.pwd-ipt').val();
+		if(uname==''){
+			alert('账号不能为空');
+			return false;
+		}
+		if(pwd==''){
+			alert('密码不能为空');
+			return false;
+		}
+		$('.login-animate').show();
+		$.ajax({
+			url:apiAddress+'/login/Index/login',
+			data:{uname:uname,pwd:pwd},
+			type:'post',
+			dataType:'json',
+			success:function(data){
+				if(data.code==0){
+					$.cookie('handyuname',data.data.uname,{expires:7,path:'/'})
+					$.cookie('handysign',data.data.id,{expires:7,path:'/'})
+					$.cookie('handytoken',data.data.token,{expires:7,path:'/'})
+					$('.login-animate').hide();
+					location.href='/handy/static';
+				}
+			},
+			error:function(){
+				$('.login-animate').hide();
+			}
+		})
+	})
+	</script>
+	<script src="./js/lottie.min.js"></script>
+    <script type="text/javascript">
+        bodymovin.loadAnimation({
+            container: document.getElementById('login-json'), // the dom element that will contain the animation
+            renderer: 'svg',
+            loop: true,
+            autoplay: true,
+            path: '/handy/static/json/login-data.json' // the path to the animation json
+        });
+    </script>
+</body>
+</html>

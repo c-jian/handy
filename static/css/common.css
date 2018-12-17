@@ -1,0 +1,55 @@
+body,ul,li,p,h2{
+	margin:0;
+	padding:0;
+	font-size: 14px;
+	font-family: '微软雅黑'!important;
+}
+li{
+	list-style: none;
+}
+a{
+	color:#3f96fd;
+	text-decoration: none;
+}
+input,button,textarea{
+	outline: none;
+	outline: 0;
+	resize: none;
+}
+/*多出部分省略号*/
+.ellipsis{
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+}
+/*图表*/
+.icons{
+	position: relative;
+	display:inline-block;
+	width:20px;
+	height:20px;
+	vertical-align: middle;
+	margin-right:5px;
+}
+.icons::before{
+	content: '';
+	position: absolute;
+	left:0;
+	top:0;
+	width:20px;
+	height:20px;
+}
+.icons-close::before{
+	width:24px;
+	height:24px;
+	background: url(../img/close.png) no-repeat center center;
+	background-size:24px;
+}
+.icons-pre::before{
+	background: url(../img/pre.png) no-repeat center center;
+	background-size:20px;
+}
+.icons-next::before{
+	background: url(../img/next.png) no-repeat center center;
+	background-size:20px;
+}

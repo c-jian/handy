@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Handy</title>
+	<script src="./js/jquery.min.js"></script>
+	<script src="./js/jquery.cookie.js"></script>
+	<script>
+	$(document).ajaxComplete(function(event, xhr, settings) {
+
+		if(xhr.status!=200 || xhr.responseJSON.code!=0){
+			location.href='/handy/static/login.html';
+		}
+	});
+	
+	</script>
+	<link rel="stylesheet" href="./css/common.css">
+	<link rel="stylesheet" href="./css/index.css">
+	<link rel="stylesheet" type="text/css" href="./css/style.css">
+</head>
+<body>
+	<!-- 顶部 -->
+	<div class="top">
+		<ul class="topbar">
+			<li><i class="icons handyicons-user"></i><span class="uname-txt"></span><a href="javascript:;" class="logout">退出</a></li>
+		</ul>
+	</div>
+	<!-- 顶部菜单 -->
+	<div class="topnav"></div>
+	<!-- 左侧菜单 -->
+	<div class="leftnav"></div>
+	<!-- 右侧内容 -->
+	<div class="rightcon">
+
+		<!-- 日常记录 -->
+		<div class="dailyRecordArea">
+			
+			
+			<!-- 记录项 -->
+			<div class="itemarea">
+				
+			</div>
+
+			<!-- <div class="recordItem oneRecordItem">
+				<div class="btns">
+					<span class="share"><i class="handyicons-share"></i></span>
+					<span class="edit"><i class="handyicons-edit"></i></span>
+					<span class="del"><i class="handyicons-del"></i></span>
+				</div>
+				<div class="info"></div>
+				<div class="title ellipsis">
+					阿里云虚拟主机账号
+				</div>
+				<div class="con">
+					<ul class="con-list">
+						<li class="list-item ellipsis"><i class="icons handyicons-user"></i>c-jian</li>
+						<li class="list-item ellipsis"><i class="icons handyicons-email"></i>1819540291@qq.com</li>
+						<li class="list-item ellipsis"><i class="icons handyicons-pwd"></i>**********</li>
+						<li class="list-item ellipsis"><i class="icons handyicons-link"></i><a href="http://www.aliy.com/panel/c-jian/?fdjkald2323" target="_blank">http://www.aliy.com/panel/c-jian/?fdjkald2323</a></li>
+						<li class="list-item ellipsis"></li>
+					</ul>
+					<span class="link-more">查看详情</span>
+				</div>
+			</div>
+ -->
+			
+			<!-- 添加按钮 -->
+			<div class="add-btn">
+				<div class="plus">
+					<span class="transverse"></span>
+					<span class="vertical"></span>
+				</div>
+				<span class="txt">点我添加</span>
+			</div><!--/add-btn-->
+
+			<!-- 翻页 -->
+			<span class="pre icons icons-pre"></span>
+			<span class="next icons icons-next"></span>
+	
+
+		</div><!--/dailyRecordArea-->
+
+
+	</div><!--/rightcon-->
+
+	<!-- 添加面板 -->
+	<div class="addPanelBg">
+		<div class="addPanel">
+			<div class="header">
+				<span class="close icons icons-close"></span>
+			</div>
+			<div class="panelcon">
+				<p class="item">
+					<span class="title">标题</span>
+					<input type="text" class="item-ipt title-ipt">
+				</p>
+				<p class="item">
+					<span class="user">用户名</span>
+					<input type="text" class="item-ipt user-ipt">
+				</p>
+				<p class="item">
+					<span class="pwd">密码</span>
+					<input type="text" class="item-ipt pwd-ipt">
+				</p>
+				<p class="item">
+					<span class="url">URL地址</span>
+					<input type="text" class="item-ipt url-ipt">
+				</p>
+				<p class="item">
+					<span class="url">邮箱地址</span>
+					<input type="text" class="item-ipt email-ipt">
+				</p>
+				<p class="item">
+					<span class="other">其他</span>
+					<input type="text" class="item-ipt other-ipt">
+				</p>
+			</div>
+			<div class="panelfooter">
+				<button class="save">保存</button>
+				<button class="cancel">取消</button>
+			</div>
+		</div>
+	</div>
+	<!--查看详情面板-->
+	<div class="detail-bg">
+		<div class="detail-box">
+			<div class="detail-header">
+				<div class="detail-img"><img src="http://p.qlogo.cn/bizmail/WIISaYlDuUPhEXicrhCH6bLGegxa8rdiboo0hpq2CZQ6V1bWmibI57s8A/0" class="avatar"></div>
+				<h2 class="detail-title"></h2>
+			</div>
+			<ul class="detail-ul">
+				<li class="detail-item"><i class="icons handyicons-user"></i><span class="d-user-txt"></span></li>
+				<li class="detail-item"><i class="icons handyicons-pwd"></i><span class="d-pwd-txt"></span></li>
+				<li class="detail-item"><i class="icons handyicons-email"></i><span class="d-email-txt"></span></li>
+				<li class="detail-item d-link"><i class="icons handyicons-link"></i><span class="d-link-txt"></span></li>
+				<li class="detail-item d-other"><span class="d-other-txt"></span></li>
+			</ul>
+			<span class="d-close"></span>
+		</div>
+	</div>
+
+	<!-- 加载动效 -->
+	<div class="reload-animate">
+		<div id="reload-json"></div>
+	</div>
+</body>
+<script src="./js/index.js"></script>
+<script src="./js/lottie.min.js"></script>
+<script type="text/javascript">
+    bodymovin.loadAnimation({
+        container: document.getElementById('reload-json'), // the dom element that will contain the animation
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: '/handy/static/json/reload-data.json' // the path to the animation json
+    });
+</script>
+</html>

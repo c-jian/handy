@@ -1,0 +1,391 @@
+/*顶部*/
+.top{
+	height:50px;
+	width:100%;
+	background-color:#272f3e;
+}
+.top .topbar{
+	height:50px;
+	line-height: 50px;
+	float:right;
+	margin-right:20px;
+	color:#fff;
+}
+.topbar .uname-txt{
+	font-size:16px;
+	color:#fff;
+	padding-right:15px;
+}
+.topbar .icons{
+	width:16px;
+	margin-right:5px;
+	font-size: 15px;
+}
+.topbar .icons::before{
+	top:0px;
+}
+/*顶部菜单*/
+.topnav{
+	height:40px;
+	width:100%;
+	background-color: #353e4a;
+}
+/*左侧菜单*/
+.leftnav{
+	position: absolute;
+	left: 0;
+	top:90px;
+	bottom:0;
+	width:180px;
+	background-color: #20212c;
+}
+/*右侧内容*/
+.rightcon{
+	position: absolute;
+	left:180px;
+	top:90px;
+	bottom:0;
+	right:0;
+}
+/*日常记录*/
+.dailyRecordArea{
+	background-color: #fff;
+	position: absolute;
+	left:0;
+	top:0;
+	width:100%;
+	height: 100%;
+	padding:0 50px;
+	box-sizing: border-box;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+/*添加按钮*/
+.add-btn{
+	width:170px;
+	height:250px;
+	border:dashed 5px #ccc;
+	position: relative;
+	margin:40px 0 0 30px;
+	float:left;
+	cursor: pointer;
+}
+.plus{
+	width:90px;
+	height:90px;
+	position: absolute;
+	top:50px;
+	left:50%;
+	transform: translateX(-50%);
+}
+.plus .transverse{
+	position: absolute;
+	left:50%;
+	top:50%;
+	width:100%;
+	transform: translate(-50%,-50%);
+	border-bottom: dashed 5px #ccc;
+	z-index: 10;
+}
+.plus .vertical{
+	position: absolute;
+	left:50%;
+	top:50%;
+	transform: translate(-50%,-50%);
+	width:0;
+	height:100%;
+	border-right:dashed 5px #ccc;
+	z-index: 1;
+}
+.add-btn .txt{
+	position: absolute;
+	width:100%;
+	height:24px;
+	line-height: 24px;
+	text-align: center;
+	bottom:60px;
+	font-size: 20px;
+	color:#ccc;
+}
+/*记录项*/
+.recordItem{
+	width:240px;
+	box-shadow: 0px 2px 10px #ccc;
+	border-top:4px solid #000;
+	border-bottom:4px solid #000;
+	border-radius: 5px;
+	float:left;
+	margin-left:30px;
+	margin-top:40px;
+	position: relative;
+}
+
+.recordItem .title{
+	height:60px;
+	font-size:18px;
+	color:#fff;
+	line-height:60px;
+	text-indent: 10px;
+}
+.recordItem .con{
+	background-color: #f1f7f5;
+	height:calc(100% - 40px);
+	padding:20px 0;
+}
+.con-list .list-item{
+	height:40px;
+	line-height: 40px;
+	padding-left:20px;
+}
+.con-list .list-item:nth-of-type(odd){
+	background: #fff;
+}
+.recordItem .link-more{
+	width:120px;
+	height:35px;
+	border-radius: 15px;
+	color:#fff;
+	display: block;
+	text-align: center;
+	line-height: 35px;
+	cursor: pointer;
+	margin:20px auto 0 auto;
+	
+}
+.recordItem .btns{
+	font-size:20px;
+	height:25px;
+	line-height:25px;
+	position: absolute;
+	left:50%;
+	top:-29px;
+	padding:3px 8px;
+	border-radius: 5px 5px 0 0;
+	color: #fff;
+	transform: translateX(-50%);
+	display: none;
+}
+.recordItem .btns span{
+	padding:0 5px;
+}
+.recordItem .icons{
+	font-size:20px;
+}
+.oneRecordItem .title,.oneRecordItem .link-more,.oneRecordItem .btns{
+	background-color: #3edb06;
+}
+.oneRecordItem .icons{
+	color:#3edb06;
+}
+.oneRecordItem:hover{
+	border-top: 4px solid #3edb06;
+	border-bottom: 4px solid #3edb06;
+}
+.twoRecordItem .title,.twoRecordItem .link-more,.twoRecordItem .btns{
+	background-color: #ff5d02;
+}
+.twoRecordItem .icons{
+	color:#ff5d02;
+}
+.twoRecordItem:hover{
+	border-top: 4px solid #ff5d02;
+	border-bottom: 4px solid #ff5d02;
+}
+.threeRecordItem .title,.threeRecordItem .link-more,.threeRecordItem .btns{
+	background-color: #b30305;
+}
+.threeRecordItem .icons{
+	color:#b30305;
+}
+.threeRecordItem:hover{
+	border-top: 4px solid #b30305;
+	border-bottom: 4px solid #b30305;
+}
+.oneRecordItem:hover .btns,.twoRecordItem:hover .btns,.threeRecordItem:hover .btns{
+	display: block;
+}
+/*添加面板*/
+.addPanelBg,.detail-bg{
+	position: absolute;
+	left:0;
+	right:0;
+	top:0;
+	bottom:0;
+	background: rgba(0,0,0,.7);
+	display:none;
+}
+.addPanel{
+	width:400px;
+/*	height:400px;*/
+	position: absolute;
+	left:50%;
+	top:50%;
+	transform: translate(-50%,-50%);
+	border-radius: 5px;
+	overflow: hidden;
+}
+.addPanel .header{
+	width:100%;
+	height:40px;
+	background: #2488c7;
+	position: relative;
+}
+.addPanel .panelcon{
+	width:100%;
+	padding-bottom: 20px;
+	background: #eee;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+.addPanel .panelfooter{
+	/*height:60px;*/
+	background: #fff;
+	border-top:1px solid #ccc;
+	padding-top:15px;
+	background: #eee;
+}
+.panelfooter .save,.panelfooter .cancel{
+	height:30px;
+	width:85px;
+	border:none;
+	color:#fff;
+	border-radius: 5px;
+	cursor: pointer;
+}
+.panelfooter .save{
+	background: #2488c7;
+	margin-left:200px;
+}
+.panelfooter .cancel{
+	background: #bbb;
+	margin-left:20px;
+	margin-bottom: 18px;
+}
+.panelcon .item{
+	margin-top:20px;
+	padding-left:40px
+}
+.panelcon .item span{
+	display: inline-block;
+	width:60px;
+	color:#666;
+}
+.panelcon .item .item-ipt{
+	height:25px;
+	width:200px;
+	text-indent: 5px;
+	background: #fff;
+	border:1px solid #ddd;
+}
+.panelcon .item .item-ipt:focus{
+	border-color:#2488c7;
+}
+.addPanel .header .close{
+	position: absolute;
+	right:2px;
+	top:8px;
+	width:25px;
+	height:25px;
+	cursor: pointer;
+}
+/*翻页样式*/
+.pre{
+	width:30px;
+	height: 30px;
+	left:20px;
+}
+.next{
+	width:30px;
+	height: 30px;
+	right:20px;
+}
+.pre,.next{
+	position: absolute;
+	top:50%;
+	transform: translateY(-50%);
+}
+.pre::before,.next::before{
+	width:30px;
+	height: 30px;
+	background-size: 30px;
+}
+/*查看详情*/
+.detail-box{
+	width:600px;
+	background:#eee;
+	border-radius: 5px;
+	margin:200px auto;
+	box-sizing: border-box;
+	position: relative;
+}
+.detail-box .detail-header{
+	background-color: #f95959;
+	overflow-x: hidden;
+}
+.detail-header .avatar{
+	width:130px;
+}
+.detail-header .detail-img{
+	width:130px;
+	height:130px;
+	overflow: hidden;
+	border-radius: 50%;
+	margin:25px auto 5px auto;
+}
+.detail-header .detail-title{
+	font-size:20px;
+	line-height: 80px;
+	text-align: center;
+	color:#fff;
+}
+.detail-item{
+	line-height:40px;
+	background-color: #fff;
+	border-bottom: 1px solid #eee;
+	font-size:15px;
+	text-indent: 10px;
+}
+.detail-item .icons{
+	margin-right: 10px;
+}
+.d-link a{
+	display:inline-block;
+	width:500px;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+	vertical-align: middle;
+	text-indent: 0;
+}
+.d-link .icons{
+	vertical-align: middle;
+	margin-top:5px;
+}
+.d-close{
+	position: absolute;
+	right:-50px;
+	top:-10px;
+	background: url(../img/close-d.png) no-repeat center center;
+	background-size: 25px;
+	width:25px;
+	height:25px;
+	cursor: pointer;
+}
+
+/*加载动效*/
+.reload-animate{
+	position: absolute;
+	left:0;
+	right:0;
+	top:0;
+	bottom: 0;
+	background: rgba(0,0,0,.7);
+	display: none;
+}
+#reload-json{
+	width:100px;
+	position: absolute;
+	left:50%;
+	margin-left:-50px;
+	top:20%;
+}
